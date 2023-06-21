@@ -17,29 +17,25 @@
 <script>
   $(document).ready(function (){
     $("#enviar").click(function (){
+      $("#slc").empty();
       let n = $("#npersonajes").val();
       let sz = $("#pistasize").val();
       console.log(n)
       if(n!="" && sz!=""){
-        if((n>="3" || "5">=n) && (n>="4" || "8">=n) ){
-          console.log("entra al if");
-            if(n==="3"){
-              $("#p1").show(true);
-              $("#p2").show(true);
-              $("#p3").show(true);
-            }else if (n==="4"){
-              $("#p1").show(true);
-              $("#p2").show(true);
-              $("#p3").show(true);
-              $("#p4").show(true);
-
-            }else {
-              $("#p1").show(true);
-              $("#p2").show(true);
-              $("#p3").show(true);
-              $("#p4").show(true);
-              $("#p5").show(true);
-            }
+        if((n>=3 && 5>=n) && (sz>=4 && 8>=sz) ){
+          for (let i=0;i<n;i++){
+            $("#slc").append('<div class="col-sm-2">\n' +
+                    '    <div class="card" style=" background-color: lightblue">\n' +
+                    '      <div class="card-body">\n' +
+                    '          <img src="robot.png" width="70rem" height="70rem">\n' +
+                    '        <br>\n' +
+                    '        <input type="text" class="form-control" aria-label="Default">\n' +
+                    '        <button class="btn btn-success">Seleccionar Personaje</button>\n' +
+                    '      </div>\n' +
+                    '    </div>\n' +
+                    '  </div>')
+          }
+          $("#start")
         }else {
           alert("El numero de personjes debe estar entre 3-5.\nEl tamaño de la pista debe estar entre 4-8 metros");
         }
@@ -69,59 +65,10 @@
     <button type="button" class="btn btn-primary mb-3" id="enviar">Ingresar personajes</button>
   </div>
 
+  <div class="d-flex justify-content-center" id="slc">
 
-<div class="d-flex justify-content-center" id="ps">
-  <div class="col-sm-2">
-    <div class="card" id="p1" style="display: none;  background-color: lightblue">
-      <div class="card-body">
-          <img src="robot.png" width="70rem" height="70rem">
-        <br>
-        <input type="text" class="form-control" aria-label="Default" id="per1" name="per1">
-        <button class="btn btn-success">Seleccionar Personaje</button>
-      </div>
-    </div>
   </div>
-  <div class="col-sm-2" >
-    <div class="card" id="p2" style="display: none;  background-color: lightblue">
-      <div class="card-body">
-        <img src="robot.png" width="70rem" height="70rem">
-        <br>
-        <input type="text" class="form-control" aria-label="Default" id="per2" name="per1">
-        <button href="#" class="btn btn-success">Seleccionar Personaje</button>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-2" >
-    <div class="card" id="p3" style="display: none;  background-color: lightblue">
-      <div class="card-body">
-        <img src="robot.png" width="70rem" height="70rem">
-        <br>
-        <input type="text" class="form-control" aria-label="Default" id="per3" name="per1">
-        <button href="#" class="btn btn-success">Seleccionar Personaje</button>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-2">
-    <div class="card" id="p4" style="display: none;  background-color: lightblue">
-      <div class="card-body">
-        <img src="robot.png" width="70rem" height="70rem">
-        <br>
-        <input type="text" class="form-control" aria-label="Default" id="per4" name="per1">
-        <button href="#" class="btn btn-success">Seleccionar Personaje</button>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-2" >
-    <div class="card" id="p5" style="display: none; background-color: lightblue">
-      <div class="card-body">
-        <img src="robot.png" width="70rem" height="70rem">
-        <br>
-        <input type="text" class="form-control" aria-label="Default" id="per5" name="per1">
-        <button href="#" class="btn btn-success">Seleccionar Personaje</button>
-      </div>
-    </div>
-  </div>
-</div>
+
 
 <!-- Optional JavaScript; choose one of the two! -->
 
